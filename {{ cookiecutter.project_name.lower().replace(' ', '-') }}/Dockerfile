@@ -1,6 +1,6 @@
 ARG PYTHONVERSION={{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}
 
-FROM python:${PYTHONVERSION}-"{{cookiecutter._debian_variant}}" AS base
+FROM python:${PYTHONVERSION}-{{cookiecutter._debian_variant}} AS base
 
 COPY --from=ghcr.io/astral-sh/uv:{{cookiecutter._uv_version}} /uv /uvx /usr/local/bin/
 
