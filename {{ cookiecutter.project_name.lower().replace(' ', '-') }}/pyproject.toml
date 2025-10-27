@@ -1,0 +1,40 @@
+[project]
+name = "{{cookiecutter.project_name.lower().replace(' ', '-')}}"
+version = "0.1.0"
+description = "{{cookiecutter.description}}"
+readme = "README.md"
+requires-python = "=={{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}"
+dependencies = [
+    "uv=={{cookiecutter._uv_version}}",
+]
+
+[dependency-groups]
+dev = [
+    "debugpy",
+    "mypy",
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+[tool.uv]
+default-groups = []
+
+[tool.ruff]
+line-length = 120
+target-version = "py{{cookiecutter.python_version.replace('.', '')}}"
+
+[tool.ruff.lint]
+extend-select = ["Q", "RUF100", "C90", "UP", "I"]
+
+[tool.ruff.format]
+docstring-code-format = true
+quote-style = "double"
+
+[tool.pyright]
+include = ["**/*.py"]
+extraPaths = ["./src"]
+pythonVersion = "{{cookiecutter.python_version}}"
+reportUnnecessaryTypeIgnoreComment = true
+typeCheckingMode = "strict"

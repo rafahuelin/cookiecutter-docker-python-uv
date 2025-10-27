@@ -1,0 +1,35 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "dockerComposeFile": [
+    "docker-compose.dev.yml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-ossdata.vscode-pgsql",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        "python.analysis.extraPaths": ["/app/src", "/app/tests"],
+        "python.globalPythonPath": "/usr/local/bin/python",
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": ["/app"],
+        "ruff.enable": true
+      }
+    }
+  },
+  "remoteEnv": {
+    "PYTHONPATH": "/app/src:${PYTHONPATH}"
+  },
+  "updateContentCommand": "",
+  "postStartCommand": "git config --global --add safe.directory /app && pre-commit install",
+  "overrideCommand": false
+}

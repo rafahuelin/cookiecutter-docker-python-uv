@@ -1,0 +1,29 @@
+services:
+  app:
+    env_file:
+      - ../.env
+    hostname: "{{cookiecutter.project_name | lower | replace(' ', '-')}}-dev"
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      target: dev
+      args:
+        USER: $USER
+        UID: $UID
+        GID: $GID
+    environment:
+      PYTHONUNBUFFERED: "1"
+      USER: $USER
+      UID: $UID
+      GID: $GID
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../:/app:cached
+      - venvproject:/app/.venv:cached
+    tty: true
+    stdin_open: true
+    command: ["bash", "-lc", "sleep infinity"]
+
+volumes:
+  venvproject:

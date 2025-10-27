@@ -1,0 +1,9 @@
+{
+  "project_name": "My proj",
+  "description": "Project description...",
+  "python_version": [],
+  "_uv_versions": "",
+  "_supported_python_versions": [],
+  "_chosen_python_version": "{{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}",
+  "_debian_variant": "slim-bookworm"
+}
