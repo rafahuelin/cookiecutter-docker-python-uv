@@ -18,18 +18,8 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 1. Linter
   ![Linter](docs/linter.gif)
 
-- VS Code Dev Container (recommended)
-  1. Install the “Dev Containers” extension.
-  2. Open this folder in VS Code.
-  3. Run: Dev Containers: Reopen in Container.
-
-- Or with Docker Compose directly
-```bash
-docker compose -f .devcontainer/docker-compose.dev.yml up --build
-```
-
 ## Features
-
+- Dockerized Python Develpment setup with global uv setup (without virtual environment)
 - Uses only actively supported CPython versions
   - Offered at project creation and pinned in the base image and .python-version.
 - Single Dockerfile for dev and production
