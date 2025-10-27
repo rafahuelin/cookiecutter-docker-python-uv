@@ -26,7 +26,7 @@ def generate_uv_lock() -> None:
 
     # Check if the required Python version is already installed
     result_is_python_installed = subprocess.run(
-        'uv python list | grep 3.14.0 | grep -v "download available"',
+        f'uv python list | grep {python_version} | grep -v "download available"',
         shell=True,
         capture_output=True,
         text=True,
@@ -57,7 +57,9 @@ def create_devcontainer_env_file() -> None:
     Create a .devcontainer/.env file with UID and GID.
     This is done for environment variables interpolation in docker-compose.dev.yml.
     """
+    Path(".env").touch(exist_ok=True)
     env_file_path = Path(".devcontainer/.env")
+    env_file_path.touch(exist_ok=True)
 
     uid: int = os.getuid()
     gid: int = os.getgid()
