@@ -24,6 +24,7 @@ docker compose -f .devcontainer/docker-compose.dev.yml up --build
   - Docker Compose-based dev environment.
   - Workspace is bind-mounted so Git status and changes behave exactly as on the host.
   - User UID and GID makes possible to edit files from inside or outside the devcontainer.
+  - Linter with Error Lens and Ruff.
 - Fast dependency management with uv
   - pyproject.toml-based workflow with uv for speedy, reproducible installs.
 - Testing scaffold
