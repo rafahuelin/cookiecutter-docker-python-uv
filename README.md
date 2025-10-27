@@ -5,6 +5,19 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 
 ## Quick start
 
+1. Generate Project
+  ![Generate Project](docs/generate-project.gif)
+2. Open Project
+  ![Open Project](docs/open-project.gif)
+3. Install Devcontainers extension
+  ![Install Devcontainers extension](docs/install-devcontainers-extension.gif)
+4. Run Tests with coverage
+  ![Run tests with coverage](docs/run-tests-with-coverage.gif)
+1. Debug Tests
+  ![Debug Tests](docs/debug-tests.gif)
+1. Linter
+  ![Linter](docs/linter.gif)
+
 - VS Code Dev Container (recommended)
   1. Install the “Dev Containers” extension.
   2. Open this folder in VS Code.
