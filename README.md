@@ -1,3 +1,8 @@
+## Generate project
+```shell
+uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
+```
+
 ## Quick start
 
 - VS Code Dev Container (recommended)
