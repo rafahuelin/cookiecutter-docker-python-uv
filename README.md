@@ -2,6 +2,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Made with Cookiecutter](https://img.shields.io/badge/built%20with-cookiecutter-orange)](https://github.com/cookiecutter/cookiecutter)
 
+# 🍪 Cookiecutter Python Template
+
+> A clean Cookiecutter template for building production-ready Dockerized Python apps with:
+> - Docker
+> - uv
+> - Devcontainers
+> - Ruff
+> - pre-commit hooks.
+>
+
+
 ## Generate project
 [Install uv](https://docs.astral.sh/uv/getting-started/installation/) if you still don't have it
 ```shell
@@ -9,7 +20,7 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ```
 
 ## Output Preview
-
+```
 📁 your-project/
 ├── .devcontainer/
 │   ├── devcontainer.json
@@ -26,7 +37,7 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ├── Dockerfile
 ├── pyproject.toml
 └── README.md
-
+```
 
 ## Quick start
 
