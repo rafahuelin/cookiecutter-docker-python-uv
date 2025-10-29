@@ -1,3 +1,7 @@
+[![GitHub release](https://img.shields.io/github/v/release/yourusername/your-template)](https://github.com/yourusername/your-template/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Made with Cookiecutter](https://img.shields.io/badge/built%20with-cookiecutter-orange)](https://github.com/cookiecutter/cookiecutter)
+
 ## Generate project
 [Install uv](https://docs.astral.sh/uv/getting-started/installation/) if you still don't have it
 ```shell
