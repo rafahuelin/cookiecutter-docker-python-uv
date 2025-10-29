@@ -56,7 +56,7 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
   ![Linter](docs/linter.gif)
 
 ## Features
-- Dockerized Python Develpment setup with global uv setup (without virtual environment)
+- Dockerized Python Development setup with global uv setup (without virtual environment)
 - Uses only actively supported CPython versions
   - Offered at project creation and pinned in the base image and .python-version.
 - Single Dockerfile for dev and production
