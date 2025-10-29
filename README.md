@@ -1,4 +1,4 @@
-[![GitHub release](https://img.shields.io/github/v/release/yourusername/your-template)](https://github.com/yourusername/your-template/releases)
+[![GitHub release](https://img.shields.io/github/v/release/rafahuelin/cookiecutter-docker-python-uv)](https://github.com/rafahuelin/cookiecutter-docker-python-uv/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Made with Cookiecutter](https://img.shields.io/badge/built%20with-cookiecutter-orange)](https://github.com/cookiecutter/cookiecutter)
 
