@@ -2,6 +2,7 @@ import subprocess
 import os
 from pathlib import Path
 from shutil import rmtree
+from unittest import result
 
 
 def init_git() -> None:
@@ -14,42 +15,25 @@ def init_git() -> None:
 
 
 def generate_uv_lock() -> None:
-    """Generate uv.lock by running `uv sync` in the given directory."""
-    python_version = "{{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}"
+    """Generate uv.lock using the Dockerfile."""
+    commands = [
+        ["docker", "build", "--target", "lock", "-t", "my-app:lock", "."],
+        ["docker", "create", "--name", "temp-lock", "my-app:lock"],
+        ["docker", "cp", "temp-lock:/uv.lock", "./"],
+        ["docker", "rm", "temp-lock"]
+    ]
 
-    # Get the latest uv version
-    subprocess.run(
-        ["uv", "self", "update"],
-        capture_output=True,
-        text=True
-    )
-
-    # Check if the required Python version is already installed
-    result_is_python_installed = subprocess.run(
-        f'uv python list | grep {python_version} | grep -v "download available"',
-        shell=True,
-        capture_output=True,
-        text=True,
-    )
-
-    # Ensure the required Python version is installed by uv's toolchain
-    try:
-        if len(result_is_python_installed.stdout) == 0:
-            subprocess.run(
-                ["uv", "python", "install", python_version],
-                capture_output=True,
-                text=True
-            )
-    except Exception as e:
-        print(f"Failed to install Python {python_version} via uv: {e}")
-        raise e
-
-    # Generate uv.lock
-    subprocess.run(
-        ["uv", "sync", "--python", python_version, "--no-install-project", "--all-groups"],
-        capture_output=True,
-        text=True
-    )
+    for cmd in commands:
+        print(f"Running: {' '.join(cmd)}")
+        try:
+            result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+            print(result.stdout)
+        except subprocess.CalledProcessError as e:
+            print("--- Docker command failed ---")
+            print(f"Stderr:\n{e.stderr}")
+            print(f"Stdout:\n{e.stdout}")
+            print("-----------------------------")
+            raise
 
 
 def create_devcontainer_env_file() -> None:
@@ -93,18 +77,11 @@ def initial_commit() -> None:
         )
 
 
-def delete_venv() -> None:
-    """Delete the virtual environment created to generate the uv.lock file."""
-    venv_path = Path(".venv")
-    rmtree(venv_path)
-
-
 def main():
     generate_uv_lock()
     create_devcontainer_env_file()
     init_git()
     initial_commit()
-    delete_venv()
 
 
 if __name__ == "__main__":

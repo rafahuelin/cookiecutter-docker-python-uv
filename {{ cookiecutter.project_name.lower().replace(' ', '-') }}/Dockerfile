@@ -1,6 +1,13 @@
-ARG PYTHONVERSION={{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}
+FROM python:{{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}-slim-bookworm AS lock
 
-FROM python:${PYTHONVERSION}-{{cookiecutter._debian_variant}} AS base
+COPY --from=ghcr.io/astral-sh/uv:{{cookiecutter._uv_version}} /uv /uvx /usr/local/bin/
+
+COPY pyproject.toml ./
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv lock
+
+FROM python:{{cookiecutter._supported_python_versions[cookiecutter.python_version].latest}}-{{cookiecutter._debian_variant}} AS base
 
 COPY --from=ghcr.io/astral-sh/uv:{{cookiecutter._uv_version}} /uv /uvx /usr/local/bin/
 
