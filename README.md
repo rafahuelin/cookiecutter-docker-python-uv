@@ -36,7 +36,8 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ├── .python-version
 ├── Dockerfile
 ├── pyproject.toml
-└── README.md
+├── README.md
+└── uv.lock
 ```
 
 ## Quick start
