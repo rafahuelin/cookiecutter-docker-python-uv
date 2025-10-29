@@ -14,7 +14,7 @@
 
 
 ## Generate project
-[Install uv](https://docs.astral.sh/uv/getting-started/installation/) if you still don't have it
+[Install uv](https://docs.astral.sh/uv/getting-started/installation/) if you still don't have it and execute:
 ```shell
 uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ```
