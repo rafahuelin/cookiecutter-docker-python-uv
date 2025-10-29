@@ -8,6 +8,26 @@
 uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ```
 
+## Output Preview
+
+📁 your-project/
+├── .devcontainer/
+│   ├── devcontainer.json
+│   └── docker-compose.dev.yml
+├── src/
+│   └── main.py
+├── tests/
+│   ├── conftest.py
+│   └── test_main.py
+├── .env.example
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .python-version
+├── Dockerfile
+├── pyproject.toml
+└── README.md
+
+
 ## Quick start
 
 1. Generate Project
