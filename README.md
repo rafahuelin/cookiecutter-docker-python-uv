@@ -23,6 +23,7 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ```
 📁 your-project/
 ├── .devcontainer/
+│   ├── .env
 │   ├── devcontainer.json
 │   └── docker-compose.dev.yml
 ├── src/
@@ -30,6 +31,7 @@ uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv
 ├── tests/
 │   ├── conftest.py
 │   └── test_main.py
+├── .env
 ├── .env.example
 ├── .gitignore
 ├── .pre-commit-config.yaml
