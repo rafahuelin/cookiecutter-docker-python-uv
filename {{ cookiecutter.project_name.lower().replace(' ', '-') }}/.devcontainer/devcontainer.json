@@ -27,7 +27,7 @@
     }
   },
   "remoteEnv": {
-    "PYTHONPATH": "/app/src:${PYTHONPATH}"
+    "PYTHONPATH": "/app/src"
   },
   "updateContentCommand": "",
   "postStartCommand": "git config --global --add safe.directory /app && pre-commit install",

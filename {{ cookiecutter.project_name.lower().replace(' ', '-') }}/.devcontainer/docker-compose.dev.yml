@@ -20,10 +20,6 @@ services:
       - "8000:8000"
     volumes:
       - ../:/app:cached
-      - venvproject:/app/.venv:cached
     tty: true
     stdin_open: true
     command: ["bash", "-lc", "sleep infinity"]
-
-volumes:
-  venvproject:
