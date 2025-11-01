@@ -14,7 +14,9 @@ COPY --from=ghcr.io/astral-sh/uv:{{cookiecutter._uv_version}} /uv /uvx /usr/loca
 COPY pyproject.toml uv.lock ./
 
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/" \
-    PYTHONPATH="/app/src:${PYTHONPATH}"
+    PYTHONPATH="/app/src" \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
 
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-install-project --no-dev
@@ -49,8 +51,15 @@ RUN groupadd -g $GID -o $USER && \
     echo "$USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Change ownership of the app, bin and python directory global Python directories
-RUN chown -R $USER:$USER /app /usr/local/bin/python${PYTHONVERSION} /usr/local/bin
+RUN chown -R $USER:$USER /app /usr/local/bin
 
 USER $USER
 
 WORKDIR /app
+
+
+FROM base AS prod
+
+WORKDIR /app
+
+CMD ["python", "/app/src/main.py"]
