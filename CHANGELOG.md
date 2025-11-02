@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] – 2025-11-02
+### Added
+- Prod stage
+- PYTHONUNBUFFERED=1 to disable python output buffering
+- PYTHONDONTWRITEBYTECODE=1 to prevent python from writing .pyc files and __pycache__ directories
+
+### Changed
+- —
+
+### Fixed
+- Cleanup
+
+### Removed
+- —
+
+### Security
+- -
+
+---
+
 ## [1.0.0] – 2025-10-29
 ### Added
 - 🎉 First official release of the cookiecutter template for Dockerized Python apps with uv.
