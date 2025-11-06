@@ -2,6 +2,25 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] – 2025-11-06
+### Added
+- Extra linux dependencies to ensure python test in devcontainer.
+- Improved documentation on how to create project without input.
+
+### Changed
+- —
+
+### Fixed
+- -
+
+### Removed
+- —
+
+### Security
+- -
+
+---
+
 ## [1.0.1] – 2025-11-02
 ### Added
 - Prod stage

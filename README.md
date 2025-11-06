@@ -25,7 +25,10 @@ specific version (v1.0.1 in this example):
 ```shell
 uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv --checkout v1.0.1
 ```
-
+create project without input
+```shell
+uvx cookiecutter gh:rafahuelin/cookiecutter-docker-python-uv --no-input project_name="My project"  description="My Python app" python_version="3.14"
+```
 
 ## Output Preview
 ```

@@ -42,6 +42,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     sudo \
     git \
     openssh-client \
+    libglib2.0-0 \
+    libx11-6 \
+    libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user with matching UID/GID and grant sudo access
