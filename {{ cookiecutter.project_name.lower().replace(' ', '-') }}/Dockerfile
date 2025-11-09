@@ -49,12 +49,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Create a non-root user with matching UID/GID and grant sudo access
 RUN groupadd -g $GID -o $USER && \
-    useradd -m -s /bin/bash -u $UID -g $GID $USER && \
+    useradd -ms /bin/bash -u $UID -g $GID $USER && \
     usermod -aG sudo $USER && \
     echo "$USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Change ownership of the app, bin and python directory global Python directories
-RUN chown -R $USER:$USER /app /usr/local/bin
+RUN chown -R $USER:$USER /app /usr/local/bin /usr/local/lib/python{{cookiecutter.python_version}} /usr/local/lib/python{{cookiecutter.python_version}}/site-packages
 
 USER $USER
 
@@ -62,6 +62,14 @@ WORKDIR /app
 
 
 FROM base AS prod
+
+USER root
+
+RUN chown -R root:root /app /usr/local/bin /usr/local/lib/python{{cookiecutter.python_version}} /usr/local/lib/python{{cookiecutter.python_version}}/site-packages
+
+RUN useradd -ms /bin/bash app
+
+USER app
 
 WORKDIR /app
 
