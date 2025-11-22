@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] – 2025-11-09
+### Added
+- -
+
+### Changed
+- Improve for development and project dependencies in the devcontainer.
+
+### Fixed
+- -
+
+### Removed
+- —
+
+### Security
+- -
+
+---
+
 ## [1.0.3] – 2025-11-09
 ### Added
 - Allow adding Python dependencies from the dev container with `uv add <package-name>` (dev user can write to global site-packages).
