@@ -35,7 +35,7 @@ ARG UID
 ARG GID
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-install-project --only-dev
+    uv sync --frozen --group dev
 
 # Install tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
