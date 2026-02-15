@@ -37,7 +37,7 @@ include = ["**/*.py"]
 extraPaths = ["./src"]
 pythonVersion = "{{cookiecutter.python_version}}"
 reportUnnecessaryTypeIgnoreComment = true
-typeCheckingMode = "strict"
+typeCheckingMode = "basic"
 
 [tool.pytest.ini_options]
 addopts = "--cov=src --cov-report=term-missing"
