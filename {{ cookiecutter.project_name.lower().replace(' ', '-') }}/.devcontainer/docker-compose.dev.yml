@@ -17,7 +17,7 @@ services:
       UID: $UID
       GID: $GID
     ports:
-      - "8000:8000"
+      - "{{cookiecutter._free_docker_port}}:8000"
     volumes:
       - ../:/app:cached
     tty: true
